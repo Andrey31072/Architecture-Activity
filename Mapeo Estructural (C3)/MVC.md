@@ -15,15 +15,22 @@ Model-View-Controller clásico. El Modelo contiene las entidades y lógica de ne
 
 ## Estructura de Carpetas
 
-Proyecto/
+ProyectoHorarios/
 │
-├── Model/
-│   ├── Security/
-│   └── Inventory/
+├── Model/                      ← TODA la lógica y datos
+│   ├── Entity/                 ← Tablas DB
+│   ├── IRepository/            ← Contratos DB
+│   ├── Repository/             ← Implementación DB
+│   ├── IService/               ← Contratos negocio
+│   ├── Service/                ← Lógica negocio
+│   ├── DTO/                    ← Transferencia datos
+│   ├── IDTO/                   ← Contratos DTO
+│   └── Utils/                  ← Helpers (JWT, procesos)
 │
-├── View/
-│   (Interfaces o respuesta JSON)
+├── View/                       ← Presentación (JSON o HTML)
+│   ├── Responses/              ← Para API
+│   └── (Vistas .cshtml)        ← Para Web
 │
-└── Controller/
+└── Controller/                 ← Controladores HTTP
     ├── Security/
     └── Inventory/
